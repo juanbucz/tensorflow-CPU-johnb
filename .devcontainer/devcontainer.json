@@ -28,7 +28,15 @@
 			
 			// Exclude other Python versions from Jupyter kernel list
 			// Prevents confusion by hiding system Python versions we don't want to use
-			"jupyter.kernels.excludePythonEnvironments": ["/bin/python"],
+			"jupyter.kernels.excludePythonEnvironments": [
+				"/bin/python",
+				"/bin/python3",
+				"/bin/python3.10",
+				"/bin/python3.11",
+				"/usr/bin/python3",
+				"/usr/bin/python3.10",
+				"/usr/bin/python3.11"
+			],
 			
 			// Disable automatic port forwarding to give explicit control
 			"remote.autoForwardPorts": false,
@@ -52,7 +60,7 @@
 	"onCreateCommand": "",
 
 	// Use 'postCreateCommand' to run commands once after the container is created
-	"postCreateCommand": "mkdir -p logs %% mkdir -p models",
+	"postCreateCommand": "mkdir -p logs && mkdir -p models",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
 	"postAttachCommand": "screen -dmS tensorboard tensorboard --logdir=logs"
