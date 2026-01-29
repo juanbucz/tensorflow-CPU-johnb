@@ -15,6 +15,9 @@
 		"TF_CPP_MIN_LOG_LEVEL": "1" // Suppress TensorFlow INFO logs for cleaner output
   	},
 
+	// Forward TensorBoard port to make it accessible
+	"forwardPorts": [6006],
+
 	// Custom configuration options
 	"customizations": {
 
